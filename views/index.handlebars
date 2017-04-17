@@ -1,0 +1,38 @@
+	<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button> 
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+             <ul class="nav navbar-nav navbar-left">
+                <li class="btn btn-default" id="scrapeButton"><a href="/scrape">Scrape New Articles</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="jumbotron">
+  <h1>Mongo Scraper</h1>
+</div>
+
+<div class="col-md-9 articleDiv">
+
+	{{#each article}}
+		
+		<div class="panel panel-default articleData">
+			<h2>{{this.title}}</h2>
+			<h3><a href="{{this.link}}">Read the Story</a></h3>
+			<div class = "articleData" id="{{this.id}}">
+				 <button class="btn btn-default" id = "saveArticle" type="submit" data-articleTitle="{{this.title}}" data-articleLink="{{this.link}}" data-articleId="{{this.id}}">Save</button>
+			</div>
+		</div>
+	{{/each}}
+
+<div>

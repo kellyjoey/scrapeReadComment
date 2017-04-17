@@ -1,0 +1,28 @@
+{
+  "name": "scrapereadcomment",
+  "version": "1.0.0",
+  "description": "web app which lets users comment, using mongoose and cheerio",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kellyjoey/scrapeReadComment.git"
+  },
+  "author": "Kelly Nicholson",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "*",
+    "cheerio": "*",
+    "morgan": "^1.7.0",
+    "request": "*"
+  },
+  "bugs": {
+    "url": "https://github.com/kellyjoey/scrapeReadComment/issues"
+  },
+  "homepage": "https://github.com/kellyjoey/scrapeReadComment#readme"
+}
