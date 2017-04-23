@@ -1,10 +1,10 @@
 $(document).ready(function() {
 
-// When you click the savenote button
+// When you click the scrape button
 $(document).on("click", "#scrapeButton", function() {
  	
 
-  // Run a GET request to run the /scrape html route
+  // Run a GET request to run the /scrape route
   $.ajax({
     method: "GET",
     url: "/scrape"
@@ -19,7 +19,7 @@ $(document).on("click", "#scrapeButton", function() {
 
  });
 
-// When you click the savenote button
+// When you click the saveArticle button
 $(".articleData").on("click", "#saveArticle", function() {
   // Grab the id associated with the article from the submit button
   // var thisId = $(this).attr("data-articleId");
@@ -42,6 +42,7 @@ $(".articleData").on("click", "#saveArticle", function() {
       console.log(data);
       
     });
+    console.log("ran that on click function in app js")
 });
 
 $(".articleData").on("click", "#createNote", function() {

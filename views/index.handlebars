@@ -13,7 +13,9 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
              <ul class="nav navbar-nav navbar-left">
-                <li class="btn btn-default" id="scrapeButton"><a href="/scrape">Scrape New Articles</a></li>
+                <form method="post" action="/scrape">
+                <li class="btn btn-default" id="scrapeButton" type="submit">Scrape New Articles</li>
+                </form>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -26,11 +28,13 @@
 
 	{{#each article}}
 		
-		<div class="panel panel-default articleData">
+		<div class="panel panel-default">
 			<h2>{{this.title}}</h2>
 			<h3><a href="{{this.link}}">Read the Story</a></h3>
 			<div class = "articleData" id="{{this.id}}">
+            <form method="post" action="/saved">
 				 <button class="btn btn-default" id = "saveArticle" type="submit" data-articleTitle="{{this.title}}" data-articleLink="{{this.link}}" data-articleId="{{this.id}}">Save</button>
+            </form>
 			</div>
 		</div>
 	{{/each}}

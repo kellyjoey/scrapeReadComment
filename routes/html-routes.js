@@ -63,9 +63,10 @@ app.get("/scrape", function(req, res) {
   });
   // Tell the browser that we finished scraping the text
   
-  res.redirect('/');
+  res.redirect('/articles');
 });
 
+ //Route to saved articles view
  app.get("/saved", function(req, res) {
 
     Saved.find({}, function(error, doc) {
@@ -90,27 +91,29 @@ app.post("/saved", function(req, res) {
     if (error) {
       res.send(error);
     }else{
-      console.log("html-routes // app.post to /saved");
-      console.log("doc" + doc);
+      console.log("ran that saved post in routes");
+      // console.log("doc" + doc);
+      res.redirect("/saved");
+
     }
   })
-  // res.redirect('/saved');
 });
 
-// app.post("/note", function(req, res) {
+//Route to articles view
+app.get("/articles", function(req, res){
 
-//   var newNote = new Note(req.body);
+      Article.find({}, function(error, doc) {
+        if (error){
+          res.send(error);
+        }else{
+          console.log("doc: " + doc)
+          res.render("index", {
+          article: doc
+          });
+        }
+      });
 
-//   newNote.save(function(error, doc) {
-//     if (error) {
-//       res.send(error);
-//     }else{
-//       console.log("saved note!");
-//       console.log("doc" + doc);
-//     }
-//   })
-//   res.redirect('/saved');
-// });
+});
 
 // Create a new note or replace an existing note
 app.post("/saved/:id", function(req, res) {
